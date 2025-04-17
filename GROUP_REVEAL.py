@@ -6,7 +6,7 @@ import pandas as pd
 # Load the name-group mapping file
 @st.cache_data
 def load_data():
-    return pd.read_csv("D:\\Users\\jkannath\\Downloads\\group_data.csv")
+    return pd.read_csv("group_data.csv")
 
 df = load_data()
 
