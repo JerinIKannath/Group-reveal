@@ -42,7 +42,10 @@ if name_input:
             time.sleep(2)
             placeholder.empty()
             st.success(f"🎉 You are in: **{team}**")
-            st.snow() 
+            
+            # Replace st.snow() with a lightning GIF
+            st.image("https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif", width=300)
+
             st.image(mystery, width=200)
             found = True
             break
