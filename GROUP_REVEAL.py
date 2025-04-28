@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #eeeeee;
+        background-color: #d9d9d9;
     }
     </style>
     """,
@@ -23,12 +23,12 @@ df = load_data()
 from PIL import Image
 # Load the logo
 
-mystery=Image.open("mystery.png")
-# UI
+logo=Image.open("logo.png")
 
+st.image(logo, width=300)
 # UI
 st.title("🔍 Discover Your Group")
-st.write("The Supreme Leader has allocated you to group. Enter your name to reveal your group!")
+st.write("The Supreme Leader has choosen you a path. Enter your name to reveal your destiny!")
 
 name_input = st.text_input("Your Name")
 
@@ -38,7 +38,7 @@ if name_input:
         team_members = df[team].dropna().astype(str).str.strip().str.lower()
         if name_input.strip().lower() in team_members.values:
             placeholder = st.empty()
-            placeholder.markdown("<h2 style='text-align: center; color: purple;'>🔮 Unveiling your destiny...</h2>", unsafe_allow_html=True)
+            placeholder.markdown("<h2 style='text-align: center; color: red;'>🔮 Unveiling your destiny...</h2>", unsafe_allow_html=True)
             time.sleep(2)
             placeholder.empty()
             st.success(f"🎉 You are in: **{team}**")
