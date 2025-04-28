@@ -13,7 +13,7 @@ df = load_data()
 from PIL import Image
 # Load the logo
 logo = Image.open("logo.png")  # Make sure logo.png is in the same folder
-mystery=Image.open("hat.png")
+mystery=Image.open("mystery.png")
 # UI
 st.image(logo, width=200)  # Adjust width if needed
 # UI
