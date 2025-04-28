@@ -13,7 +13,7 @@ df = load_data()
 from PIL import Image
 # Load the logo
 logo = Image.open("logo.png")  # Make sure logo.png is in the same folder
-
+mystery=Image.open("hat.png")
 # UI
 st.image(logo, width=200)  # Adjust width if needed
 # UI
@@ -29,7 +29,7 @@ if name_input:
         if name_input.strip().lower() in team_members.values:
             st.success(f"🎉 You are in: **{team}**")
             st.snow() 
-            st.image("mystery.gif", use_column_width=True)
+            st.image(mystery, width=200)
             found = True
             break
     if not found:
