@@ -25,7 +25,7 @@ from PIL import Image
 
 logo=Image.open("logo.png")
 
-st.image(logo, width=450)
+st.image(logo, width=350)
 # UI
 st.title("🔍 Discover Your Group")
 st.write("The Supreme Leader has choosen you a path. Enter your name to reveal your destiny!")
@@ -52,12 +52,12 @@ if name_input:
 
             # Play Thunder Sound
             st.markdown(
-                """
-                <audio autoplay>
-                    <source src="https://www.soundjay.com/nature/thunder-01.mp3" type="audio/mpeg">
-                </audio>
-                """,
-                unsafe_allow_html=True
+            """
+            <audio autoplay>
+                <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Thunder.wav" type="audio/wav">
+            </audio>
+            """,
+            unsafe_allow_html=True
             )
 
             time.sleep(2)
