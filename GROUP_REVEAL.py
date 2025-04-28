@@ -39,7 +39,7 @@ st.markdown(
 st.markdown(
     """
     <div style='text-align: center;'>
-        <h1 style='color: black;'>🔍 Discover Your Group</h1>
+        <h1 style='color: black;font-size: 22px;'>🔍 Discover Your Group</h1>
         <p style='color: black; font-size: 20px;'>The Supreme Leader has chosen you a path. Enter your UID to reveal your destiny!</p>
     </div>
     """,
@@ -72,7 +72,7 @@ if name_input:
             
             
             # Step 3: Show the final success message
-            st.success(f"🎉 You are in: **{team}**")
+            st.success(f" You are in: **{team}**")
             
             found = True
             break
