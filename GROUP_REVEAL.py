@@ -10,7 +10,9 @@ def set_background(image_file):
         f"""
         <style>
         .stApp {{
-            background-image: url("data:image/png;base64,{encoded_string}");
+            background: 
+                linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                url("data:image/png;base64,{encoded_string}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -21,8 +23,8 @@ def set_background(image_file):
         unsafe_allow_html=True
     )
 
-# --- Call the function with your image file ---
-set_background("logo.png") 
+# Call it early in your script
+set_background("logo.png")
 # Load the name-group mapping file
 @st.cache_data
 def load_data():
