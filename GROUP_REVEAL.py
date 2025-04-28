@@ -11,12 +11,16 @@ def set_background(image_file):
         <style>
         .stApp {{
             background: 
-                linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+                linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
                 url("data:image/png;base64,{encoded_string}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            font-weight: bold;
+        }}
+        .css-10trblm, .css-1d391kg, .st-bv, .st-c9, .st-co, .st-emotion-cache-1c7y2kd {{
+            font-weight: bold !important;
         }}
         </style>
         """,
