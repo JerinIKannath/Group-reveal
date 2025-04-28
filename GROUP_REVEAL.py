@@ -1,7 +1,8 @@
 import streamlit as st
 st.set_page_config(page_title="Group Reveal ✨", page_icon="🪄")
-
+import base64
 import pandas as pd
+import time
 
 # Load the name-group mapping file
 @st.cache_data
@@ -12,12 +13,19 @@ df = load_data()
 
 from PIL import Image
 # Load the logo
-logo = Image.open("logo.png")  # Make sure logo.png is in the same folder
+
 mystery=Image.open("mystery.png")
 # UI
-st.image(logo, width=200)  # Adjust width if needed
+st.markdown(
+    """
+    <div style="text-align: center; padding-bottom: 10px;">
+        <img src="logo.png" width="220">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 # UI
-st.title("🔮 Discover Your Group")
+st.title("🔍 Discover Your Group")
 st.write("The Supreme Leader has allocated you to group. Enter your name to reveal your group!")
 
 name_input = st.text_input("Your Name")
@@ -27,6 +35,10 @@ if name_input:
     for team in df.columns:
         team_members = df[team].dropna().astype(str).str.strip().str.lower()
         if name_input.strip().lower() in team_members.values:
+            placeholder = st.empty()
+            placeholder.markdown("<h2 style='text-align: center; color: purple;'>🔮 Unveiling your destiny...</h2>", unsafe_allow_html=True)
+            time.sleep(2)
+            placeholder.empty()
             st.success(f"🎉 You are in: **{team}**")
             st.snow() 
             st.image(mystery, width=200)
