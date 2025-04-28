@@ -3,32 +3,16 @@ st.set_page_config(page_title="Group Reveal ✨", page_icon="🪄")
 import base64
 import pandas as pd
 import time
-def set_background(image_file):
-    with open(image_file, "rb") as img_file:
-        encoded_string = base64.b64encode(img_file.read()).decode()
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background: 
-                linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), 
-                url("data:image/png;base64,{encoded_string}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            font-weight: bold;
-        }}
-        .css-10trblm, .css-1d391kg, .st-bv, .st-c9, .st-co, .st-emotion-cache-1c7y2kd {{
-            font-weight: bold !important;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-# Call it early in your script
-set_background("logo.png")
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f0f0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Load the name-group mapping file
 @st.cache_data
 def load_data():
