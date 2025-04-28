@@ -25,7 +25,7 @@ from PIL import Image
 
 logo=Image.open("logo.png")
 
-st.image(logo, width=300)
+st.image(logo, width=450)
 # UI
 st.title("🔍 Discover Your Group")
 st.write("The Supreme Leader has choosen you a path. Enter your name to reveal your destiny!")
@@ -37,16 +37,37 @@ if name_input:
     for team in df.columns:
         team_members = df[team].dropna().astype(str).str.strip().str.lower()
         if name_input.strip().lower() in team_members.values:
+            # Step 1: Show "Unveiling..." message
             placeholder = st.empty()
             placeholder.markdown("<h2 style='text-align: center; color: red;'>🔮 Unveiling your destiny...</h2>", unsafe_allow_html=True)
             time.sleep(2)
             placeholder.empty()
+            
+            # Step 2: Show Lightning GIF
+            lightning_placeholder = st.empty()
+            lightning_placeholder.image(
+                "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHdkc2l4empma2pzZWRnbTlxNXM1MGc4NWtsempxbzZwY2ZpY2ZhciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fqVodOPZg9uBYvYjes/giphy.gif",
+                width=450
+            )
+
+            # Play Thunder Sound
+            st.markdown(
+                """
+                <audio autoplay>
+                    <source src="https://www.soundjay.com/nature/thunder-01.mp3" type="audio/mpeg">
+                </audio>
+                """,
+                unsafe_allow_html=True
+            )
+
+            time.sleep(2)
+            lightning_placeholder.empty()
+            
+            # Step 3: Show the final success message
             st.success(f"🎉 You are in: **{team}**")
             
-            # Replace st.snow() with a lightning GIF
-            st.image("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHdkc2l4empma2pzZWRnbTlxNXM1MGc4NWtsempxbzZwY2ZpY2ZhciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fqVodOPZg9uBYvYjes/giphy.gif", width=300)
-
             found = True
             break
     if not found:
         st.error("😕 Name not found in any team.")
+
