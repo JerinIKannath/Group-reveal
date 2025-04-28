@@ -46,17 +46,15 @@ if name_input:
             # Step 2: Show Lightning GIF
             lightning_placeholder = st.empty()
             lightning_placeholder.image(
-                "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHdkc2l4empma2pzZWRnbTlxNXM1MGc4NWtsempxbzZwY2ZpY2ZhciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fqVodOPZg9uBYvYjes/giphy.gif",
-                width=450
+                "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnJqdWM2ZWx6eWx3eHJuemh3ejB4bDBtcnB1bnBncmowcW9wOXJ5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bVSCpa4IoTH8s/giphy.gif",
+                width=300
             )
 
-            # Play Thunder Sound
-            audio_placeholder = st.empty()
-            audio_placeholder.audio(thunder_sound, autoplay=True)
+        
 
-            time.sleep(2)
+            time.sleep(3)
             lightning_placeholder.empty()
-            audio_placeholder.empty()
+            
             
             # Step 3: Show the final success message
             st.success(f"🎉 You are in: **{team}**")
