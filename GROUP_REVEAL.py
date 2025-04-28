@@ -6,8 +6,8 @@ import time
 st.markdown(
     """
     <style>
-    body {
-        background-color: #f0f0f0;
+    .stApp {
+        background-color: #eeeeee;
     }
     </style>
     """,
