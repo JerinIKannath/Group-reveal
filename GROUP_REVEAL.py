@@ -35,7 +35,7 @@ st.markdown(
 )
 # UI
 # st.title("🔍 Discover Your Group")
-# st.write("The Supreme Leader has choosen you a path. Enter your name to reveal your destiny!")
+# st.write("The Supreme Leader has choosen you a path. Enter your UID to reveal your destiny!")
 st.markdown(
     """
     <div style='text-align: center;'>
