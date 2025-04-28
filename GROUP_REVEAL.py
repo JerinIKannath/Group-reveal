@@ -25,7 +25,7 @@ from PIL import Image
 
 logo=Image.open("logo.png")
 
-st.image(logo, width=350)
+st.image(logo, width=200)
 # UI
 st.title("🔍 Discover Your Group")
 st.write("The Supreme Leader has choosen you a path. Enter your name to reveal your destiny!")
@@ -39,7 +39,7 @@ if name_input:
         if name_input.strip().lower() in team_members.values:
             # Step 1: Show "Unveiling..." message
             placeholder = st.empty()
-            placeholder.markdown("<h2 style='text-align: center; color: red;'>🔮 Unveiling your destiny...</h2>", unsafe_allow_html=True)
+            placeholder.markdown("<h2 style='text-align: center; color: red;'> Unveiling your destiny...</h2>", unsafe_allow_html=True)
             time.sleep(2)
             placeholder.empty()
             
@@ -51,17 +51,12 @@ if name_input:
             )
 
             # Play Thunder Sound
-            st.markdown(
-            """
-            <audio autoplay>
-                <source src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Thunder.wav" type="audio/wav">
-            </audio>
-            """,
-            unsafe_allow_html=True
-            )
+            audio_placeholder = st.empty()
+            audio_placeholder.audio(thunder_sound, autoplay=True)
 
             time.sleep(2)
             lightning_placeholder.empty()
+            audio_placeholder.empty()
             
             # Step 3: Show the final success message
             st.success(f"🎉 You are in: **{team}**")
