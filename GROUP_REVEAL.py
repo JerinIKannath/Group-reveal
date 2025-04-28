@@ -39,7 +39,7 @@ st.markdown(
 st.markdown(
     """
     <div style='text-align: center;'>
-        <h1 style='color: black;font-size: 22px;'>🔍 Discover Your Group</h1>
+        <h1 style='color: black;font-size: 24px;'>🔍 Discover Your Group</h1>
         <p style='color: black; font-size: 20px;'>The Supreme Leader has chosen you a path. Enter your UID to reveal your destiny!</p>
     </div>
     """,
@@ -54,7 +54,7 @@ if name_input:
         if name_input.strip().lower() in team_members.values:
             # Step 1: Show "Unveiling..." message
             placeholder = st.empty()
-            placeholder.markdown("<h2 style='text-align: center; color: red;'> Unveiling your destiny...</h2>", unsafe_allow_html=True)
+            placeholder.markdown("<h2 style='text-align: center; color: black; font-size: 24px;'> Unveiling your destiny...</h2>", unsafe_allow_html=True)
             time.sleep(2)
             placeholder.empty()
             
