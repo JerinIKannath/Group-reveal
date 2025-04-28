@@ -10,9 +10,15 @@ def load_data():
 
 df = load_data()
 
+from PIL import Image
+# Load the logo
+logo = Image.open("logo.png")  # Make sure logo.png is in the same folder
+
+# UI
+st.image(logo, width=200)  # Adjust width if needed
 # UI
 st.title("🔮 Discover Your Group")
-st.write("Enter your name to reveal your group!")
+st.write("The Supreme Leader has allocated you to group. Enter your name to reveal your group!")
 
 name_input = st.text_input("Your Name")
 
@@ -22,7 +28,8 @@ if name_input:
         team_members = df[team].dropna().astype(str).str.strip().str.lower()
         if name_input.strip().lower() in team_members.values:
             st.success(f"🎉 You are in: **{team}**")
-            st.balloons()
+            st.snow() 
+            st.image("mystery.gif", use_column_width=True)
             found = True
             break
     if not found:
