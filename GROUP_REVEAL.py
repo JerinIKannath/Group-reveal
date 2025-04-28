@@ -57,7 +57,7 @@ if name_input:
             
             
             # Step 3: Show the final success message
-            st.success(f"🎉 You are in: **{team}**")
+            st.success(f"🥷 You are in: **{team}**")
             
             found = True
             break
