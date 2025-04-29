@@ -39,7 +39,7 @@ st.markdown(
 st.markdown(
     """
     <div style='text-align: center;'>
-        <h1 style='color: black;font-size: 24px;'>Enter Your Realm!</h1>
+        <h1 style='color: black;font-size: 24px;'>Step Into Your Realm!</h1>
         <p style='color: black; font-size: 20px;'>The Supreme Leader has chosen you a path. Enter your UID to reveal your destiny!</p>
     </div>
     """,
