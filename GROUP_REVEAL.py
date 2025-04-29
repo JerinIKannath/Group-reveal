@@ -56,7 +56,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-name_input = st.text_input("Your Name")
+name_input = st.text_input("Your UID")
 
 if name_input:
     found = False
@@ -87,7 +87,7 @@ if name_input:
             st.markdown(
             f"""
             <div style="background-color: #d4edda; padding: 15px; border-radius: 10px; border: 1px solid #c3e6cb;">
-                <h3 style="color: black; text-align: center;">🥷 You are in: <strong>{team}</strong></h3>
+                <h3 style="color: black; text-align: center;">🎉 You are in: <strong>{team}</strong></h3>
             </div>
             """,
             unsafe_allow_html=True
