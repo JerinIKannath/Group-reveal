@@ -96,5 +96,5 @@ if name_input:
             found = True
             break
     if not found:
-        st.error("😕 Name not found in any team.")
+        st.error("😕 UID not found in any team.")
 
