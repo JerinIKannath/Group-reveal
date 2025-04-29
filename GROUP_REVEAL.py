@@ -34,7 +34,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 # UI
-# st.title("🔍 Discover Your Group")
+# st.title("Enter Your Realm!")
 # st.write("The Supreme Leader has choosen you a path. Enter your UID to reveal your destiny!")
 st.markdown(
     """
