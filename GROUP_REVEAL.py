@@ -45,6 +45,17 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.markdown(
+    """
+    <style>
+    label {
+        color: black !important;
+        font-weight: bold;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 name_input = st.text_input("Your Name")
 
 if name_input:
@@ -72,7 +83,15 @@ if name_input:
             
             
             # Step 3: Show the final success message
-            st.success(f" You are in: **{team}**")
+            #st.success(f" You are in: **{team}**")
+            st.markdown(
+            f"""
+            <div style="background-color: #d4edda; padding: 15px; border-radius: 10px; border: 1px solid #c3e6cb;">
+                <h3 style="color: black; text-align: center;">🥷 You are in: <strong>{team}</strong></h3>
+            </div>
+            """,
+            unsafe_allow_html=True
+            )
             
             found = True
             break
