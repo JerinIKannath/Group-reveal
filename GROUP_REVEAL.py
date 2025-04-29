@@ -23,14 +23,14 @@ df = load_data()
 from PIL import Image
 # Load the logo
 
-#logo=Image.open("logo.png")
+#logo=Image.open("logo1.png")
 
 st.markdown(
     """
     <div style="text-align: center;">
         <img src="data:image/png;base64,{}" width="200">
     </div>
-    """.format(base64.b64encode(open("logo.png", "rb").read()).decode()),
+    """.format(base64.b64encode(open("logo1.png", "rb").read()).decode()),
     unsafe_allow_html=True
 )
 # UI
