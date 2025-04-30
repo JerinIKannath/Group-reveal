@@ -80,7 +80,7 @@ if name_input:
 
             time.sleep(3)
             lightning_placeholder.empty()
-            
+           
             
             # Step 3: Show the final success message
             #st.success(f" You are in: **{team}**")
@@ -92,7 +92,11 @@ if name_input:
             """,
             unsafe_allow_html=True
             )
-            
+            try:
+                with open("access_log.csv", "a") as log_file:
+                    log_file.write(f"{name_input.strip()},{team},{time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+            except Exception as e:
+                st.warning("⚠️ Could not write to access log.")
             found = True
             break
     if not found:
