@@ -3,6 +3,7 @@ st.set_page_config(page_title="Group Reveal ✨", page_icon="🪄")
 import base64
 import pandas as pd
 import time
+from pathlib import Path
 st.markdown(
     """
     <style>
@@ -93,10 +94,11 @@ if name_input:
             unsafe_allow_html=True
             )
             try:
-                with open("access_log.csv", "a") as log_file:
-                    log_file.write(f"{name_input.strip()},{team},{time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+                log_entry = f"{name_input.strip()},{team},{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
+                log_file_path = Path("access_log.csv")
+                log_file_path.write_text(log_file_path.read_text() + log_entry if log_file_path.exists() else log_entry)
             except Exception as e:
-                st.warning("⚠️ Could not write to access log.")
+                st.warning("⚠️ Access log failed to write.")
             found = True
             break
     if not found:
