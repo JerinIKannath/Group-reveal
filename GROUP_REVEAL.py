@@ -93,12 +93,7 @@ if name_input:
             """,
             unsafe_allow_html=True
             )
-            try:
-                log_entry = f"{name_input.strip()},{team},{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
-                log_file_path = Path("access_log.csv")
-                log_file_path.write_text(log_file_path.read_text() + log_entry if log_file_path.exists() else log_entry)
-            except Exception as e:
-                st.warning("⚠️ Access log failed to write.")
+         
             found = True
             break
     if not found:
